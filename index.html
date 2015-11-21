@@ -2,10 +2,13 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <title>Shhveg</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script type="text/javascript" src="js/index.js"></script>
+    <title>Shveg</title>
 </head>
 <!--Microblog
 Microblog je kombinacija Twitterja na eni in klasičnega bloga na drugi strani.
@@ -19,24 +22,91 @@ Uporabnik Janez se lahko tako "naroči" na objave, ki jih piše uporabnica Rozin
 Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnejo z @ in #, podobno, kot to počne Twitter.-->
 <body>
     <!--Navbar-->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Shhveg</a>
+    <div class="container">
+        <nav class="navbar navbar-fixed-top osnovnaBarva">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" onclick="prestaviActive('home')">Shveg</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav navbar-right osnovnaBarva">
+                        <li class="active" id="home"><a href="#" onclick="prestaviActive('home')"><span class="glyphicon glyphicon-home"></span> Domov</a></li>
+                        <li id="profile"><a href="#" onclick="prestaviActive('profile')"><img src="images/stockUserPhoto.png" style="width: 20px; height: 20px"> Janez</a></li>
+                        <li id="logout"><a href="#" onclick="prestaviActive('logout')"><span class="glyphicon glyphicon-log-out"></span> Izpis</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
+        </nav>
+    </div>
+    <!-- Div za vse pod navbarom -->
+    <div id="mainContainer" class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-1"></div>
+            <div class="col-lg-4 col-sm-10">
+                <button type="button" class="btn btn-lg osnovnaBarva mojGumb" data-toggle="modal" data-target="#myModal">Dodaj objavo</button>
+            </div>
+            <div class="col-lg-4 col-sm-1"></div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Nova objava:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" maxlength="300" rows="4" id="comment" placeholder="Napiši svoje misli...(Maksimum 300 znakov)"></textarea>
+                            </div>
+                        </form>
+                        <form id="fileupload">
+                            <!-- Redirect browsers with JavaScript disabled to the origin page -->
+                            <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                            <div class="row">
+                                <div class="col-lg-8"></div>
+                                <div class="col-lg-4">
+                                    <!-- The fileinput-button span is used to style the file input field as button -->
+                                    <span class="btn mojGumb osnovnaBarva fileinput-button" id="dodajSliko">
+                                        <i class="glyphicon glyphicon-plus"></i>
+                                        <span>Dodaj sliko...</span>
+                                        <input type="file" onchange="readURL(this);" name="filename" accept="image/gif, image/jpeg, image/png" id="inputDodajSliko">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">&nbsp</div>
+                            <div class="row">
+                                <span id="slikce" src="#"></span>
+                            </div>
+                                    <!--button type="submit" class="btn btn-primary start">
+                                        <i class="glyphicon glyphicon-upload"></i>
+                                        <span>Start upload</span>
+                                    </button>
+                                    <button type="reset" class="btn btn-warning cancel">
+                                        <i class="glyphicon glyphicon-ban-circle"></i>
+                                        <span>Cancel upload</span>
+                                    </button>
+                                    <button type="button" class="btn btn-danger delete">
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                        <span>Delete</span>
+                                    </button>
+                                    <!--input type="checkbox" class="toggle"-->
+                                    <!-- The global file processing state -->
+                                    <!--span class="fileupload-process"></span-->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn mojGumb osnovnaBarva" data-dismiss="modal">Objavi</button>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </nav>
+        <hr>
+        <span></span>
+    </div>
 </body>
 </html>
