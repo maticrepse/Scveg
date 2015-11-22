@@ -30,9 +30,9 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
                 </div>
                 <div>
                     <ul class="nav navbar-nav navbar-right osnovnaBarva">
-                        <li class="active" id="home"><a href="#" onclick="prestaviActive('home')"><span class="glyphicon glyphicon-home"></span> Domov</a></li>
-                        <li id="profile"><a href="#" onclick="prestaviActive('profile')"><img src="images/stockUserPhoto.png" style="width: 20px; height: 20px"> Janez</a></li>
-                        <li id="logout"><a href="#" onclick="prestaviActive('logout')"><span class="glyphicon glyphicon-log-out"></span> Izpis</a></li>
+                        <li class="active" id="home"><a href="#tab1" onclick="prestaviActive('home')"><span class="glyphicon glyphicon-home"></span> Domov</a></li>
+                        <li id="profile"><a href="#tab2" onclick="prestaviActive('profile')"><img src="images/stockUserPhoto.png" style="width: 20px; height: 20px"> Janez</a></li>
+                        <li id="logout"><a href="#tab3" onclick="prestaviActive('logout')"><span class="glyphicon glyphicon-log-out"></span> Izpis</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,56 +40,64 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
     </div>
     <!-- Div za vse pod navbarom -->
     <div id="mainContainer" class="container">
-        <div class="row">
-            <div class="col-lg-4 col-sm-4 col-xs-8">
-                <button type="button" class="btn btn-lg osnovnaBarva mojGumb" data-toggle="modal" data-target="#myModal" id="dodajObjavo">Dodaj objavo</button>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Nova objava:</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <textarea class="form-control" maxlength="300" rows="4" id="comment" placeholder="Napiši svoje misli...(Maksimum 300 znakov)"></textarea>
-                            </div>
-                        </form>
-                        <form id="fileupload">
-                            <!-- Redirect browsers with JavaScript disabled to the origin page -->
-                            <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                            <div class="row">
-                                <div class="col-lg-8"></div>
-                                <div class="col-lg-4">
-                                    <!-- The fileinput-button span is used to style the file input field as button -->
-                                    <span class="btn mojGumb osnovnaBarva fileinput-button" id="dodajSliko">
-                                        <i class="glyphicon glyphicon-plus"></i>
-                                        <span>Dodaj sliko...</span>
-                                        <input type="file" onchange="readURL(this);" name="filename" accept="image/gif, image/jpeg, image/png" id="inputDodajSliko">
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="row">&nbsp</div>
-                            <div class="row">
-                                <span id="slikce"></span>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn mojGumb osnovnaBarva" data-dismiss="modal" id="objavi" disabled="disabled">Objavi</button>
-                    </div>
+        <div id="tab1">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4 col-xs-8">
+                    <button type="button" class="btn btn-lg osnovnaBarva mojGumb" data-toggle="modal" data-target="#myModal" id="dodajObjavo">Dodaj objavo</button>
                 </div>
-
             </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Nova objava:</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <textarea class="form-control" maxlength="300" rows="4" id="comment" placeholder="Napiši svoje misli...(Maksimum 300 znakov)"></textarea>
+                                </div>
+                            </form>
+                            <form id="fileupload">
+                                <!-- Redirect browsers with JavaScript disabled to the origin page -->
+                                <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                                <div class="row">
+                                    <div class="col-lg-8"></div>
+                                    <div class="col-lg-4">
+                                        <!-- The fileinput-button span is used to style the file input field as button -->
+                                        <span class="btn mojGumb osnovnaBarva fileinput-button" id="dodajSliko">
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                            <span>Dodaj sliko...</span>
+                                            <input type="file" onchange="readURL(this);" name="filename" accept="image/gif, image/jpeg, image/png" id="inputDodajSliko">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">&nbsp</div>
+                                <div class="row">
+                                    <span id="slikce"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn mojGumb osnovnaBarva" data-dismiss="modal" id="objavi" disabled="disabled">Objavi</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <hr>
+            <span id="newsFeed"></span>
         </div>
-        <hr>
-        <span id="newsFeed"></span>
+        <div id="tab2">
+
+        </div>
+        <div id="tab3">
+            <div></div>
+        </div>
     </div>
 </body>
 </html>

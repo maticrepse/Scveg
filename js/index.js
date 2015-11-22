@@ -51,14 +51,23 @@ $(window).resize(function(){
 
 function prestaviActive(vrednost){
     if(vrednost=="home"){
+        $("#tab1").show();
+        $("#tab2").hide();
+        $("#tab3").hide();
         $("#home").addClass("active");
         $("#profile").removeClass("active");
         $("#logout").removeClass("active");
     }else if(vrednost=="profile"){
+        $("#tab2").show();
+        $("#tab1").hide();
+        $("#tab3").hide();
         $("#home").removeClass("active");
         $("#profile").addClass("active");
         $("#logout").removeClass("active");
     }else if(vrednost=="logout"){
+        $("#tab3").show();
+        $("#tab2").hide();
+        $("#tab1").hide();
         $("#home").removeClass("active");
         $("#profile").removeClass("active");
         $("#logout").addClass("active");
