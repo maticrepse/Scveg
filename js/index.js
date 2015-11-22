@@ -25,6 +25,8 @@ $(window).ready(function(){
     }else{
         $("#mainContainer").css("width", width);
         $("#dodajObjavo").css("margin-left", (width-140)/2);
+        $(".modal-dialog").css("width", width-50);
+        $(".modal-dialog").css("margin-left", 25);
     }
 
 
@@ -42,6 +44,8 @@ $(window).resize(function(){
     }else{
         $("#mainContainer").css("width", width);
         $("#dodajObjavo").css("margin-left", (width-140)/2);
+        $(".modal-dialog").css("width", width-50);
+        $(".modal-dialog").css("margin-left", 25);
     }
 });
 
