@@ -76,3 +76,13 @@ a{
 .textInput{
     word-wrap: break-word;
 }
+@media (max-width: 767px){
+    #mainContainer {
+        margin-top: 186px;
+    }
+}
+#dodajObjavo{
+    width: 140px;
+    margin-left: 205px;
+    margin-right: 205px;
+}

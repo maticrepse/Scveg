@@ -20,7 +20,12 @@ $(window).ready(function(){
     }
     $(".container-fluid").css("padding-left", padding/2);
     $(".container-fluid").css("padding-right", padding/2);
-    $("#mainContainer").css("width", pageWidth);
+    if(width>549){
+        $("#mainContainer").css("width", pageWidth);
+    }else{
+        $("#mainContainer").css("width", width);
+        $("#dodajObjavo").css("margin-left", (width-140)/2);
+    }
 
 
 });
@@ -32,7 +37,12 @@ $(window).resize(function(){
     }
     $(".container-fluid").css("padding-left", padding/2);
     $(".container-fluid").css("padding-right", padding/2);
-    $("#mainContainer").css("width", pageWidth);
+    if(width>549){
+        $("#mainContainer").css("width", pageWidth);
+    }else{
+        $("#mainContainer").css("width", width);
+        $("#dodajObjavo").css("margin-left", (width-140)/2);
+    }
 });
 
 function prestaviActive(vrednost){
@@ -57,7 +67,7 @@ function readURL(input) {
         reader.onload = function (e) {
             stevecSlik++;
             idSlik++;
-            $('#slikce').append("<img class='uploadSlike col-lg-3' src='#' id='slika"+idSlik+"'><a href='#' id='zapri"+idSlik+"' class='close col-lg-1 uploadSlike' aria-label='close' onclick=zbrisiSliko('"+idSlik+"')>&times;</a>");
+            $('#slikce').append("<img class='uploadSlike col-lg-3 col-sm-3 col-xs-3' src='#' id='slika"+idSlik+"'><a href='#' id='zapri"+idSlik+"' class='close col-lg-1 col-sm-1 col-xs-1 uploadSlike' aria-label='close' onclick=zbrisiSliko('"+idSlik+"')>&times;</a>");
             var resultat= e.target.result;
             if(removed1){
                 slika1 = resultat;
