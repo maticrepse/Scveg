@@ -29,13 +29,13 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
                     <a class="navbar-brand" href="#" onclick="prestaviActive('home')">Shveg</a>
                     <ul class="nav navbar-nav osnovnaBarva">
                         <li id="search"><input type="text" class="form-control" id="searchBar" placeholder="search users or #" onfocus="prestaviActive('search')"></li>
-                        <a href="#tab4" style="visibility: hidden" id="prestaviTab"></a>
                     </ul>
+                    <a href="#tab4" style="visibility: hidden" id="prestaviTab"></a>
                 </div>
                 <div>
                     <ul class="nav navbar-nav navbar-right osnovnaBarva">
                         <li class="active" id="home"><a href="#tab1" onclick="prestaviActive('home')"><span class="glyphicon glyphicon-home"></span> Domov</a></li>
-                        <li id="profile"><a href="#tab2" onclick="prestaviActive('profile')"><img src="images/stockUserPhoto.png" style="width: 20px; height: 20px"> Janez</a></li>
+                        <li id="profile"><a href="#tab2" onclick="prestaviActive('profile')"><img src="images/stockUserPhoto.png" style="width: 20px; height: 20px" alt="No photo"> Janez</a></li>
                         <li id="logout"><a href="#tab3" onclick="prestaviActive('logout')"><span class="glyphicon glyphicon-log-out"></span> Izpis</a></li>
                     </ul>
                 </div>
@@ -61,7 +61,7 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
                             <h4 class="modal-title">Nova objava:</h4>
                         </div>
                         <div class="modal-body">
-                            <form role="form">
+                            <form>
                                 <div class="form-group">
                                     <textarea class="form-control" maxlength="300" rows="4" id="comment" placeholder="Napiši svoje misli...(Maksimum 300 znakov)"></textarea>
                                 </div>
@@ -80,7 +80,7 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
                                         </span>
                                     </div>
                                 </div>
-                                <div class="row">&nbsp</div>
+                                <div class="row"></div>
                                 <div class="row">
                                     <span id="slikce"></span>
                                 </div>
@@ -100,7 +100,7 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
             <span id="newsFeed">
                 <div class="panel panel-success">
                     <div class="panel-heading" id="objava1">
-                        <img src="images/stockUserPhoto.png" class="newsFeedUserPhoto">
+                        <img src="images/stockUserPhoto.png" class="newsFeedUserPhoto" alt="No photo">
                         <span class="headerName"> Janez Novak</span>
                     </div>
                     <div class="panel-body">
@@ -116,7 +116,7 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
         </div>
         <div id="tab2">
             <div class="row profil">
-                <img class="" src="images/stockUserPhoto.png" id="slikaProfila">
+                <img class="" src="images/stockUserPhoto.png" id="slikaProfila" alt="No photo">
             </div>
             <div class="row profil">
                 <h4>Janez Novak</h4>
@@ -128,7 +128,7 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
             <span id="mojeObjave">
                 <div class="panel panel-success">
                     <div class="panel-heading" id="mojaObjava1">
-                        <img src="images/stockUserPhoto.png" class="newsFeedUserPhoto">
+                        <img src="images/stockUserPhoto.png" class="newsFeedUserPhoto" alt="No photo">
                         <span class="headerName"> Janez Novak</span> </div> <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12 textInput">
