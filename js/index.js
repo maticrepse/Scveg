@@ -137,14 +137,6 @@ $(document).ready(function(){
         }else{
             $("#objavi").attr("disabled", false);
         }
-        //var x = inputVal.length;
-        //inputVal = inputVal.substr(0, 41) + " "  + inputVal.substr(41);
-        //inputVal = inputVal.substr(42, 83) + " "  + inputVal.substr(83);
-        //inputVal = inputVal.substr(84, 125) + " "  + inputVal.substr(125);
-        /*inputVal = inputVal.substr(126, 167) + " "  + inputVal.substr(167);
-        inputVal = inputVal.substr(168, 209) + " "  + inputVal.substr(209);
-        inputVal = inputVal.substr(210, 251) + " "  + inputVal.substr(251);
-        inputVal = inputVal.substr(252, 293) + " "  + inputVal.substr(293);*/
     });
     //newsFeed
     $("#objavi").click(function(){
@@ -155,6 +147,7 @@ $(document).ready(function(){
             var mesec = datum.getMonth()+1;
             var leto = datum.getYear() -100 +2000;
             $("#newsFeed").prepend('<div class="panel panel-success"> <div class="panel-heading" id="objava'+stevecObjav+'"> <img src="images/stockUserPhoto.png" class="newsFeedUserPhoto"><span class="headerName"> Janez Novak</span> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12 textInput">'+inputVal+' </div> </div> </div> <div class="panel-footer">'+dan+'.'+mesec+'.'+leto+'</div> </div>');
+            $("#mojeObjave").prepend('<div class="panel panel-success"> <div class="panel-heading" id="mojaObjava'+stevecObjav+'"> <img src="images/stockUserPhoto.png" class="newsFeedUserPhoto"><span class="headerName"> Janez Novak</span> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12 textInput">'+inputVal+' </div> </div> </div> <div class="panel-footer">'+dan+'.'+mesec+'.'+leto+'</div> </div>');
             idSlik=0;
             $("#slikce").empty();
             $("#comment").val("");
@@ -183,6 +176,7 @@ $(document).ready(function(){
             var mesec = datum.getMonth()+1;
             var leto = datum.getYear() -100 +2000;
             $("#newsFeed").prepend('<div class="panel panel-success"><div class="panel-heading" id="objava'+stevecObjav+'"><img src="images/stockUserPhoto.png" class="newsFeedUserPhoto"><span class="headerName"> Janez Novak</span> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12 textInput">'+inputVal+'</div> </div> <div class="row">&nbsp</div> <div class="row"> <img src="'+src+'" class="panelBodyPhoto"> </div> </div> <div class="panel-footer">'+dan+'.'+mesec+'.'+leto+'</div> </div>');
+            $("#mojeObjave").prepend('<div class="panel panel-success"><div class="panel-heading" id="mojaObjava'+stevecObjav+'"><img src="images/stockUserPhoto.png" class="newsFeedUserPhoto"><span class="headerName"> Janez Novak</span> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12 textInput">'+inputVal+'</div> </div> <div class="row">&nbsp</div> <div class="row"> <img src="'+src+'" class="panelBodyPhoto"> </div> </div> <div class="panel-footer">'+dan+'.'+mesec+'.'+leto+'</div> </div>');
             stevecSlik=0;
             idSlik=0;
             $("#slikce").empty();
@@ -225,6 +219,7 @@ $(document).ready(function(){
             var mesec = datum.getMonth()+1;
             var leto = datum.getYear() -100 +2000;
             $("#newsFeed").prepend('<div class="panel panel-success"><div class="panel-heading" id="objava'+stevecObjav+'"><img src="images/stockUserPhoto.png" class="newsFeedUserPhoto"><span class="headerName"> Janez Novak</span> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12 textInput">'+inputVal+'</div> </div> <div class="row">&nbsp</div> <div class="row"> <img src="'+src1+'" class="panelBodyPhoto"> </div><div class="row">&nbsp</div><div class="row"> <img src="'+src2+'" class="panelBodyPhoto"> </div> </div> <div class="panel-footer">'+dan+'.'+mesec+'.'+leto+'</div> </div>');
+            $("#mojeObjave").prepend('<div class="panel panel-success"><div class="panel-heading" id="mojaObjava'+stevecObjav+'"><img src="images/stockUserPhoto.png" class="newsFeedUserPhoto"><span class="headerName"> Janez Novak</span> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12 textInput">'+inputVal+'</div> </div> <div class="row">&nbsp</div> <div class="row"> <img src="'+src1+'" class="panelBodyPhoto"> </div><div class="row">&nbsp</div><div class="row"> <img src="'+src2+'" class="panelBodyPhoto"> </div> </div> <div class="panel-footer">'+dan+'.'+mesec+'.'+leto+'</div> </div>');
             stevecSlik=0;
             idSlik=0;
             $("#slikce").empty();
@@ -281,6 +276,7 @@ $(document).ready(function(){
             var mesec = datum.getMonth()+1;
             var leto = datum.getYear() -100 +2000;
             $("#newsFeed").prepend('<div class="panel panel-success"><div class="panel-heading" id="objava'+stevecObjav+'"><img src="images/stockUserPhoto.png" class="newsFeedUserPhoto"><span class="headerName"> Janez Novak</span> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12">'+inputVal+'</div> </div> <div class="row">&nbsp</div> <div class="row"> <img src="'+src1+'" class="panelBodyPhoto"> </div><div class="row">&nbsp</div><div class="row"> <img src="'+src2+'" class="panelBodyPhoto"> </div> <div class="row">&nbsp</div> <div class="row"> <img src="'+src3+'" class="panelBodyPhoto"> </div> </div> <div class="panel-footer">'+dan+'.'+mesec+'.'+leto+'</div> </div>');
+            $("#mojeObjave").prepend('<div class="panel panel-success"><div class="panel-heading" id="mojaObjava'+stevecObjav+'"><img src="images/stockUserPhoto.png" class="newsFeedUserPhoto"><span class="headerName"> Janez Novak</span> </div> <div class="panel-body"> <div class="row"> <div class="col-lg-12">'+inputVal+'</div> </div> <div class="row">&nbsp</div> <div class="row"> <img src="'+src1+'" class="panelBodyPhoto"> </div><div class="row">&nbsp</div><div class="row"> <img src="'+src2+'" class="panelBodyPhoto"> </div> <div class="row">&nbsp</div> <div class="row"> <img src="'+src3+'" class="panelBodyPhoto"> </div> </div> <div class="panel-footer">'+dan+'.'+mesec+'.'+leto+'</div> </div>');
             stevecSlik=0;
             idSlik=0;
             $("#slikce").empty();

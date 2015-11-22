@@ -97,3 +97,34 @@ a{
     display:none;
 
 }
+#slikaProfila{
+    width: 150px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.profil{
+    text-align: center;
+}
+.naslov{
+    margin-left: 5%;
+    margin-top: 10px;
+    color: #61498A;
+}
+#hrNews{
+    float: right;
+    width: 85%;
+    border:1px solid;
+    border-color: #DAC6FE;
+}
+#hrProfile{
+    float: right;
+    width: 79%;
+    border:1px solid;
+    border-color: #DAC6FE;
+}
+.left{
+    float: left;
+    width: 4%;
+    border:1px solid;
+    border-color: #DAC6FE;
+}
