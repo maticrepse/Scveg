@@ -62,3 +62,17 @@ a{
 .close{
     right:50px;
 }
+.newsFeedUserPhoto{
+    width: 30px;
+    height: 30px;
+}
+.headerName{
+    color: #61498A;
+    font-size: 20px;
+}
+.panelBodyPhoto{
+    width: 450px;
+}
+.textInput{
+    word-wrap: break-word;
+}

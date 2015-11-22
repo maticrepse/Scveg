@@ -43,7 +43,7 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
         <div class="row">
             <div class="col-lg-4 col-sm-1"></div>
             <div class="col-lg-4 col-sm-10">
-                <button type="button" class="btn btn-lg osnovnaBarva mojGumb" data-toggle="modal" data-target="#myModal">Dodaj objavo</button>
+                <button type="button" class="btn btn-lg osnovnaBarva mojGumb" data-toggle="modal" data-target="#myModal" id="dodajObjavo">Dodaj objavo</button>
             </div>
             <div class="col-lg-4 col-sm-1"></div>
         </div>
@@ -79,34 +79,19 @@ Aplikacija naj omogoča tudi posebno obravnavanje ključnih besed, ki se začnej
                             </div>
                             <div class="row">&nbsp</div>
                             <div class="row">
-                                <span id="slikce" src="#"></span>
+                                <span id="slikce"></span>
                             </div>
-                                    <!--button type="submit" class="btn btn-primary start">
-                                        <i class="glyphicon glyphicon-upload"></i>
-                                        <span>Start upload</span>
-                                    </button>
-                                    <button type="reset" class="btn btn-warning cancel">
-                                        <i class="glyphicon glyphicon-ban-circle"></i>
-                                        <span>Cancel upload</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger delete">
-                                        <i class="glyphicon glyphicon-trash"></i>
-                                        <span>Delete</span>
-                                    </button>
-                                    <!--input type="checkbox" class="toggle"-->
-                                    <!-- The global file processing state -->
-                                    <!--span class="fileupload-process"></span-->
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn mojGumb osnovnaBarva" data-dismiss="modal">Objavi</button>
+                        <button type="button" class="btn mojGumb osnovnaBarva" data-dismiss="modal" id="objavi" disabled="disabled">Objavi</button>
                     </div>
                 </div>
 
             </div>
         </div>
         <hr>
-        <span></span>
+        <span id="newsFeed"></span>
     </div>
 </body>
 </html>
