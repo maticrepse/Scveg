@@ -80,6 +80,26 @@ a{
     #mainContainer {
         margin-top: 186px;
     }
+    #hrNews{
+        display: none;
+    }
+    #hrProfile{
+         display: none;
+     }
+    .left{
+        display: none;
+    }
+    .naslov{
+        display: none;
+    }
+    #slikaProfila{
+        width: 20%;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+    .panelBodyPhoto{
+        width: 80%;
+    }
 
 }
 #dodajObjavo{
@@ -125,6 +145,11 @@ a{
 .left{
     float: left;
     width: 4%;
+    border:1px solid;
+    border-color: #DAC6FE;
+}
+.mediaHr{
+    display: none;
     border:1px solid;
     border-color: #DAC6FE;
 }

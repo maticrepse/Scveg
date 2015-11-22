@@ -28,6 +28,14 @@ $(window).ready(function(){
         $(".modal-dialog").css("width", width-50);
         $(".modal-dialog").css("margin-left", 25);
     }
+    if(width<768){
+        $(".mediaHr").show();
+        $("#slikaProfila").css("width", "20%");
+        $("#slikaProfila").css("margin-left", "40%");
+        $("#slikaProfila").css("margin-right", "40%");
+    }else{
+        $(".mediaHr").hide();
+    }
 
 
 });
@@ -46,6 +54,14 @@ $(window).resize(function(){
         $("#dodajObjavo").css("margin-left", (width-140)/2);
         $(".modal-dialog").css("width", width-50);
         $(".modal-dialog").css("margin-left", 25);
+    }
+    if(width<768){
+        $(".mediaHr").show();
+        $("#slikaProfila").css("width", "20%");
+        $("#slikaProfila").css("margin-left", "40%");
+        $("#slikaProfila").css("margin-right", "40%");
+    }else{
+        $(".mediaHr").hide();
     }
 });
 
