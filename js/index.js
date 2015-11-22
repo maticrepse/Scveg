@@ -4,7 +4,7 @@
 var pageWidth = 550;
 var stevecSlik=0;
 var maxID=3;
-var idSlik=0;
+var idSlik=1;
 var slika1=null;
 var slika2=null;
 var slika3=null;
@@ -70,23 +70,39 @@ function prestaviActive(vrednost){
         $("#tab1").show();
         $("#tab2").hide();
         $("#tab3").hide();
+        $("#tab4").hide();
         $("#home").addClass("active");
         $("#profile").removeClass("active");
         $("#logout").removeClass("active");
+        $("#search").removeClass("active");
     }else if(vrednost=="profile"){
         $("#tab2").show();
         $("#tab1").hide();
         $("#tab3").hide();
+        $("#tab4").hide();
         $("#home").removeClass("active");
         $("#profile").addClass("active");
         $("#logout").removeClass("active");
+        $("#search").removeClass("active");
     }else if(vrednost=="logout"){
         $("#tab3").show();
         $("#tab2").hide();
         $("#tab1").hide();
+        $("#tab4").hide();
         $("#home").removeClass("active");
         $("#profile").removeClass("active");
         $("#logout").addClass("active");
+        $("#search").removeClass("active");
+    }else if(vrednost=="search"){
+        $("#tab3").hide();
+        $("#tab2").hide();
+        $("#tab1").hide();
+        $("#tab4").show();
+        $("#home").removeClass("active");
+        $("#profile").removeClass("active");
+        $("#logout").removeClass("active");
+        $("#search").addClass("active");
+        $("#prestaviTab").click();
     }
 }
 function readURL(input) {
@@ -154,8 +170,62 @@ $(document).ready(function(){
             $("#objavi").attr("disabled", false);
         }
     });
+    $("#searchBar").keydown(function(e){
+        //iskaje
+    });
     //newsFeed
     $("#objavi").click(function(){
+        var inputStart=inputVal;
+        //inputVal=inputVal.replace(/[^a-ž0-9A-Ž@]/g, " ");
+        var stevec=0;
+        while(inputStart.indexOf("@")!=-1) {
+            var index = inputStart.indexOf("@");
+            var index2=index+1;
+            var regex=/[^a-ž0-9A-Ž]/g;
+
+            while(index2<inputStart.length && !regex.test(inputStart.substr(index2, 1))){
+                index2++;
+            }
+            if(index+1!=index2){
+                var length = (index2-index);
+                var replace = inputStart.substr(index,length);
+                var replace2 = inputStart.substr(index+1,length-1);
+                var afna = "afna";
+                inputVal = inputVal.substr(0,index) +"<a class='afna' onclick=isci('"+afna+replace2+"')>"+replace+"</a>" + inputVal.substr(index2);
+                inputStart = inputStart.replace(replace, "<a class='afna' onclick=isci('"+afna+replace2+"')>"+replace+"</a>");
+                inputStart = inputStart.replace("@",".");
+            }else{
+                inputStart = inputStart.replace("@",".");
+
+            }
+
+        }
+        var inputStart=inputVal;
+        //inputVal=inputVal.replace(/[^a-ž0-9A-Ž@]/g, " ");
+        var stevec=0;
+        while(inputStart.indexOf("#")!=-1) {
+            var index = inputStart.indexOf("#");
+            var index2=index+1;
+            var regex=/[^a-ž0-9A-Ž]/g;
+
+            while(index2<inputStart.length && !regex.test(inputStart.substr(index2, 1))){
+                index2++;
+            }
+            if(index+1!=index2){
+                var length = (index2-index);
+                var replace = inputStart.substr(index,length);
+                var replace2 = inputStart.substr(index+1,length-1);
+                var hash="hash";
+                inputVal = inputVal.substr(0,index) +"<a class='afna' onclick=isci('"+hash+replace2+"')>"+replace+"</a>" + inputVal.substr(index2);
+                inputStart = inputStart.replace(replace, "<a class='afna' onclick=isci('"+hash+replace2+"')>"+replace+"</a>");
+
+                inputStart = inputStart.replace("#",".");
+            }else{
+                inputStart = inputStart.replace("#",".");
+
+            }
+
+        }
         if(stevecSlik==0){
             stevecObjav++;
             var datum = new Date();
@@ -305,3 +375,12 @@ $(document).ready(function(){
         }
     });
 });
+function isci(kaj){
+    if(kaj.substr(0,4)=="afna"){
+        $("#searchBar").focus();
+        $("#searchBar").val("@"+kaj.substr(4));
+    }else{
+        $("#searchBar").focus();
+        $("#searchBar").val("#"+kaj.substr(4));
+    }
+}
