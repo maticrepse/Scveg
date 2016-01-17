@@ -1,0 +1,73 @@
+<%= form_for @user, url: user_path, html: { multipart: true } do |form| %>
+  <%= form.file_field :avatar %>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<div class="row profil link">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <span class="btn btn-sm mojGumb osnovnaBarva fileinput-button" style="float:none; margin-bottom:5px;">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                    <span>Add</span>
+                                    <!--input type="file" onchange="readURL(this);" name="filename" accept="image/gif, image/jpeg, image/png" id="inputDodajSliko"-->                   
+                                    <%= form.file_field :avatar, type:'file', name:'filename', accept:"image/gif, image/jpeg, image/png", onchange:"readURLprofile(this);"%>
+                                </span>
+                        </div>
+                    </div>
+                    <div class="row profil link">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <%= form.submit "Upload", class:'btn btn-sm mojGumb osnovnaBarva', id:'gumbZaUpload' %>
+                            </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Nova objava:</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <textarea class="form-control" maxlength="300" rows="4" id="comment" placeholder="Napiši svoje misli...(Maksimum 300 znakov)"></textarea>
+                                </div>
+                            </form>
+                            <form id="fileupload">
+                                <!-- Redirect browsers with JavaScript disabled to the origin page -->
+                                <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                                <div class="row">
+                                    <div class="col-lg-8"></div>
+                                    <div class="col-lg-4">
+                                        <!-- The fileinput-button span is used to style the file input field as button -->
+                                        <span class="btn mojGumb osnovnaBarva fileinput-button" id="dodajSliko">
+                                            <i class="glyphicon glyphicon-plus"></i>
+                                            <span>Dodaj sliko...</span>
+                                            <input type="file" onchange="readURL(this);" name="filename" accept="image/gif, image/jpeg, image/png" id="inputDodajSliko">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row"></div>
+                                <div class="row">
+                                    <span id="slikce"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn mojGumb osnovnaBarva" data-dismiss="modal" id="objavi" disabled="disabled">Objavi</button>
+                        </div>
+                    </div>
+
+                </div>

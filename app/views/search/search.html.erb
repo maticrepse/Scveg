@@ -1,0 +1,18 @@
+<div id="mainContainer" class="container">
+    <div>	
+		<% @results.each do |user| %>
+    		<div class="row profil" style="text-align:left;">
+    			<div class="panel panel-success">
+	    			<div class="panel-heading" id="mojaObjava1">
+						<%= image_tag user.avatar.url(:medium), width:40, alt:'No photo' %>
+			            <span class="headerName">
+			                <%= link_to user_path(user) do%>
+			                    <%= user.email %>
+			                <% end %>
+			            </span>
+			    	</div>	        
+			    </div>	        	
+			</div>	
+		<% end %>
+	</div>	
+</div>		

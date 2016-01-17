@@ -1,0 +1,55 @@
+
+
+    <!-- Div za vse pod navbarom -->
+    <div id="mainContainer" class="container">
+        <div>
+        	<div class="row profil">
+        		<span id="slikce"></span>
+        	</div>
+            <% if @user.id==current_user.id || current_user.admin %>
+    			<%= form_for @user, url: user_path, html: { multipart: true } do |form| %>
+            		<div class="row profil link">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                        	<span class="btn btn-sm mojGumb osnovnaBarva fileinput-button" style="float:none; margin-bottom:5px;">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>Add</span>
+                				<%= form.file_field :avatar , onchange:"readURLprofile(this);"%>
+                			</span>
+	                	</div>
+                	</div>
+        			<div class="row profil link">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+	                		<%= form.submit "Upload", class:'btn btn-sm mojGumb osnovnaBarva', id:'gumbZaUpload'%>
+	                	</div>
+	                </div>
+				<% end %>
+            <%end%>
+            <div class="row profil">
+                <h4><%= @user.email %></h4>
+            </div>
+            <hr class="left">
+            <hr id="hrProfile">
+            <div class="row naslov"> Objave:</div>
+            <hr class="mediaHr">
+            <span id="mojeObjave"-->
+                <div class="panel panel-success">
+                    <div class="panel-heading" id="mojaObjava1">
+                        <%= image_tag @user.avatar.url(:medium), class:'newsFeedUserPhoto', alt:'No photo' %>
+                        <!--img src="images/stockUserPhoto.png" class="newsFeedUserPhoto" alt="No photo"-->
+                        <span class="headerName">
+                            <%= link_to user_path(@user) do%>
+                                <%= @user.email %>
+                            <% end %>
+                        </span> </div> <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12 textInput">
+                            Vozim se z avtobusom v Ljubljano! :)
+                        </div>
+                    </div>
+                </div>
+                    <div class="panel-footer">22.11.2015</div>
+                </div>
+            </span>
+        </div>
+
+    </div>

@@ -1,0 +1,58 @@
+<div id="mainContainer" class="container">
+    <div>	
+		 <% @results.each do |p| %>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                        <%= image_tag p.user.avatar.url(:medium), height:30, alt:'No photo' %>   
+                        <!--img src="images/stockUserPhoto.png" class="wwsFeedUserPhoto" alt="No photo"-->
+                        <span class="headerName"> 
+                            <%= link_to user_path(p.user) do%>
+                                <%= p.user.email %>
+                            <% end %>
+                            <span class="lokacija"><span class="glyphicon glyphicon-map-marker">   </span><%= p.location %></span>
+                        </span>
+                        <% if p.user==current_user || current_user.admin %>
+                            <span style="float:right;"> 
+                                    <%= link_to post_path(p),
+                                      method: :delete,
+                                      data: { confirm: 'Are you sure?' } do %>
+                                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                                        <button type="button" class="btn btn-sm osnovnaBarva mojGumb">Delete</button>
+                                    </div>
+                                <%end%>
+                            </span>
+                            <span style="float:right;"> 
+                                    <%= link_to edit_post_path(p) do %>
+                                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                                        <button type="button" class="btn btn-sm osnovnaBarva mojGumb">Edit</button>
+                                    </div>
+                                <%end%>
+                            </span>
+                        <% end %>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 textInput">
+                                <span class="spremeniInput"><%= p.body %></span>
+                            </div>
+                            <div class="row">
+                                <% if p.avatar_file_name!=nil %> 
+                                    <%= image_tag p.avatar, class:'newsFeedUserPhoto', alt:'No photo' %>   
+                                    <!--img src="'+src+'" class="panelBodyPhoto"--> 
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <% if p.created_at!=p.updated_at %>
+                            Updated on
+                            <%= p.updated_at%>
+                        <% else %>
+                            <%= p.created_at%>
+                        <% end %>
+                    </div>
+                   
+                    </div>
+                <% end %>
+	</div>	
+</div>		

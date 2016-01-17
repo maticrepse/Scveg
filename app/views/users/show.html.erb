@@ -1,0 +1,97 @@
+
+    <!-- Div za vse pod navbarom -->
+    <div id="mainContainer" class="container">
+        <div>
+            <div class="row profil">
+                <%= image_tag @user.avatar.url(:medium), id:'slikaProfila', alt:'No photo' %>
+                <!--img class="" src="images/stockUserPhoto.png" id="slikaProfila" alt="No photo"-->
+            </div>
+            <% if @user.id==current_user.id || current_user.admin %>
+                <div class="row profil link">
+                    <%= link_to edit_user_path(@user) do%>
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <button type="button" class="btn btn-sm osnovnaBarva mojGumb">Edit photo</button>
+                            </div>
+                    <%end%>
+                </div>
+            <% else %>
+                <% if !@user.followed_by?(current_user)%>
+                <div class="row profil link">
+                    <%= link_to follow_user_path(@user) do%>
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <button type="button" class="btn btn-sm osnovnaBarva mojGumb">Follow</button>
+                            </div>
+                    <%end%>
+                    </div>
+                <%else%>
+                <div class="row profil link">
+                    <%= link_to unfollow_user_path(@user) do%>
+                            <div class="col-lg-12 col-sm-12 col-xs-12">
+                                <button type="button" class="btn btn-sm osnovnaBarva mojGumb">Unfollow</button>
+                            </div>
+                    <%end%>
+                    </div>
+                <%end%>
+            <%end%>
+            <div class="row profil">
+                <h4><%= @user.email %></h4>
+                Followers: <%= @user.followers_count %>
+            </div>
+            <hr class="left">
+            <hr id="hrProfile">
+            <div class="row naslov"> Objave:</div>
+            <hr class="mediaHr">
+            <span id="mojeObjave"-->
+                <% @posts.each do |p| %>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                        <%= image_tag p.user.avatar.url(:medium), height:30, alt:'No photo' %>   
+                        <!--img src="images/stockUserPhoto.png" class="newsFeedUserPhoto" alt="No photo"-->
+                        <span class="headerName"> 
+                            <%= link_to user_path(p.user) do%>
+                                <%= p.user.email %>
+                            <% end %>
+                            <span class="lokacija"><span class="glyphicon glyphicon-map-marker">   </span><%= p.location %></span>
+                        </span>
+                        <% if p.user==current_user || current_user.admin %>
+                            <span style="float:right;"> 
+                                    <%= link_to post_path(p),
+                                      method: :delete,
+                                      data: { confirm: 'Are you sure?' } do %>
+                                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                                        <button type="button" class="btn btn-sm osnovnaBarva mojGumb">Delete</button>
+                                    </div>
+                                <%end%>
+                            </span>
+                            <span style="float:right;"> 
+                                    <%= link_to edit_post_path(p) do %>
+                                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                                        <button type="button" class="btn btn-sm osnovnaBarva mojGumb">Edit</button>
+                                    </div>
+                                <%end%>
+                            </span>
+                        <% end %>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 textInput">
+                                <div class="col-lg-12 textInput">
+                                <span class="spremeniInput"><%= p.body %></span>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <% if p.avatar_file_name!=nil %> 
+                                    <%= image_tag p.avatar, class:'newsFeedUserPhoto', alt:'No photo' %>   
+                                    <!--img src="'+src+'" class="panelBodyPhoto"--> 
+                                <% end %>
+                        </div>
+                    </div>
+                    <div class="panel-footer"><%= p.created_at%></div>
+                   
+                    </div>
+                <% end %>
+            </span>
+        </div>
+
+    </div>

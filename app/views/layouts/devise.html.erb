@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/index.css" type="text/css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css">
+    <script type="text/javascript" src="javascripts/index.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <title>Shveg</title>
+</head>
+<body class="sign_in">
+  <h1>Shveg</h1>
+  <!--%= render 'layouts/header' %-->
+  <div class="pozCenter">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+  </div>
+</body>
+</html>

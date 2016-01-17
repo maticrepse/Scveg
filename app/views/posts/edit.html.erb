@@ -1,0 +1,29 @@
+<div id="mainContainer" class="container">
+    <div>
+    		<%= form_for @post, url: post_path, html: { multipart: true } do |f| %>
+    	<div class="row profil">
+        		
+        	</div>
+    	<div class="row profil link">
+				<%= f.text_area :body, class:'form-control' %>
+  				<div class="col-lg-12 col-sm-12 col-xs-12">
+                    <span class="btn btn-sm mojGumb osnovnaBarva fileinput-button" style="margin-bottom:5px; float:none;" id="dodajSliko">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span>Add</span>
+                        <%= f.file_field :avatar , onchange:"readURL(this);"%>
+                    </span>
+                </div>
+                <% if @post.avatar_file_name!=nil %>
+                	<%= link_to remove_avatar_path(@post) do%>
+	                   	<div class="col-lg-12 col-sm-12 col-xs-12">
+	                            <button type="button" class="btn btn-sm osnovnaBarva mojGumb" style="margin-bottom:5px;">Delete current photo</button>
+                        </div>
+                	<%end%>
+                <%end%>
+                            
+                
+				<%= f.submit "Update", class:'btn btn-lg osnovnaBarva' %>
+		</div>
+			<% end %>
+	</div>
+</div>

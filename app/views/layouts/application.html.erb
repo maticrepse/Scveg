@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--cript src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script-->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <title>Shveg</title>
+</head>
+<body>
+  <div class="container">
+        <nav class="navbar navbar-fixed-top osnovnaBarva">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!--a class="navbar-brand" href="">Shveg</a-->
+                    <%= link_to "Shveg", root_path, class:'navbar-brand', data: { no_turbolink: true } %>
+                    <ul class="nav navbar-nav osnovnaBarva">
+                        <li id="search"><!--input type="text" class="form-control" id="searchBar" placeholder="search users or #" -->
+                        
+                         <%= form_tag search_path, method: "get" do %>
+                          <%= text_field_tag :name, nil, class: "form-control", placeholder: "Search users or \#", id:'searchBarAfna' %>
+                        <% end %>
+                          <!--onfocus="prestaviActive('search')"--></li>
+                          <li id="searchHash"><!--input type="text" class="form-control" id="searchBar" placeholder="search users or #" -->
+                        
+                         <%= form_tag search_hash_path, method: "get" do %>
+                          <%= text_field_tag :hash, nil, class: "form-control", placeholder: "Search users or \#", id:'searchBarHash' %>
+                        <% end %>
+                          <!--onfocus="prestaviActive('search')"--></li>
+                    </ul>
+                    <a href="#tab4" style="visibility: hidden" id="prestaviTab"></a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav navbar-right osnovnaBarva">
+                        <li id="home">
+                          <%= link_to raw('<span class="glyphicon glyphicon-home"></span> Home'), root_path, data: { no_turbolink: true }  %>
+                          
+                        </li>
+                        <!--li id="profile"><a href=""><img src="/assets/stockUserPhoto.png" style="width: 20px; height: 20px" alt="No photo"> Janez</a></li-->
+                        <li id="profile">
+                            <%= link_to user_path(current_user), data: { no_turbolink: true }  do%>
+                    <%= image_tag current_user.avatar.url(:medium), width: 20, alt: 'No photo' %>
+                  <%= current_user.email %>
+                <% end %>
+                        </li>
+                        <li id="logout">
+                          <%= link_to raw('<span class="glyphicon glyphicon-log-out"></span>Logout'), destroy_user_session_path, method: :delete %>
+                          
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+  <%= yield %>
+</body>
+</html>

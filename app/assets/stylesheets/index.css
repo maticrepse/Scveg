@@ -1,0 +1,247 @@
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+}
+#mainContainer{
+    padding-top: 5px;
+    margin-top: 52px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.osnovnaBarva{
+    background-color: #7557A5;
+    color: white;
+}
+.pozCenter{
+    width: 20%;
+}
+.sign_in{
+    background-color: #7557A5;
+    color: white;
+    text-align: center;
+}
+.sign_in h1{
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+.signGumb{
+    background-color: white;
+    color: #7557A5;
+    margin-top: 10px;
+}
+.form_control{
+    width: 40%;
+}
+a{
+    color: white;
+}
+.mojGumb:hover{
+    background-color:#61498A;
+    color: white;
+}
+.navbar-brand:hover{
+    background-color:#61498A;
+    color: white;
+}
+.active{
+    background-color:#61498A;
+    color: white;
+}
+.fileinput-button {
+    float: right;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+/*@media screen\9 {
+    .fileinput-button input {
+        filter: alpha(opacity=0);
+        font-size: 100%;
+        height: 100%;
+    }
+}*/
+#slika0{
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+.uploadSlike{
+    float: left;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.close{
+    right:50px;
+}
+.newsFeedUserPhoto{
+   width: 70%;
+   text-align: center;
+   margin-left:15%;
+   margin-top: 10px;
+}
+.headerName a{
+    color: #61498A;
+    font-size: 20px;
+    text-decoration: none;
+}
+.panelBodyPhoto{
+    width: 450px;
+}
+.textInput{
+    word-wrap: break-word;
+}
+@media (max-width: 767px){
+    #mainContainer {
+        margin-top: 237.5px;
+    }
+    #hrNews{
+        display: none;
+    }
+    #hrProfile{
+         display: none;
+     }
+    .left{
+        display: none;
+    }
+    .naslov{
+        display: none;
+    }
+    #slikaProfila{
+        width: 20%;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+    .panelBodyPhoto{
+        width: 80%;
+    }
+    #search{
+        margin-left: 40px;
+        padding: 0px;
+    }
+
+}
+#dodajObjavo{
+    width: 140px;
+    margin-left: 305px;
+    margin-right: 305px;
+}
+#tab1{
+
+}
+#tab2{
+    display: none;
+}
+#tab3{
+    display:none;
+
+}
+#slikaProfila{
+    width: 150px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+.profil{
+    text-align: center;
+}
+.naslov{
+    margin-left: 5%;
+    margin-top: 10px;
+    color: #61498A;
+}
+#hrNews{
+    float: right;
+    width: 87.6%;
+    border:1px solid;
+    border-color: #DAC6FE;
+}
+#hrProfile{
+    float: right;
+    width: 87.6%;
+    border:1px solid;
+    border-color: #DAC6FE;
+}
+.left{
+    float: left;
+    width: 4%;
+    border:1px solid;
+    border-color: #DAC6FE;
+}
+.mediaHr{
+    display: none;
+    border:1px solid;
+    border-color: #DAC6FE;
+}
+#search{
+    padding: 10px;
+    width: 200px;
+}
+#searchHash{
+    padding: 10px;
+    width: 200px;
+    display: none;
+}
+.afna{
+    text-decoration: none;
+    color: #286090;
+}
+.afna:hover{
+    text-decoration: underline;
+    color: #286090;
+}
+.lokacija{
+    color: #B386FE;
+}
+/*Alerts and Errors*//**/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+ /*.modal form {
+  margin-bottom: 0;
+}
+*/
+.invisibleForm{
+    display: none;
+}
+.delteLink{
+    float: right;
+}
+
